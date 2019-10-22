@@ -3,9 +3,9 @@
 </template>
 
 <script>
+import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/sql/sql';
 import { codemirror } from 'vue-codemirror';
-import 'codemirror/lib/codemirror.css';
 
 export default {
     name: 'editor',
@@ -17,8 +17,8 @@ export default {
             code: '',
             editorOptions: {
                 autofocus: true,
-                // lineNumbers: true,
-                // lineWrapping: true,
+                lineNumbers: true,
+                lineWrapping: true,
                 mode: 'text/x-sql',
                 theme: 'custom'
             }

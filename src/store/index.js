@@ -8,7 +8,7 @@ import * as actions from './actions';
 import mutations from './mutations';
 
 Vue.use(Vuex);
-Vue.use(VueCodemirror, {});
+Vue.use(VueCodemirror); // TODO find better spot for this
 
 const settings = new Settings();
 

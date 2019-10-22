@@ -10,8 +10,8 @@ Modified by Scott Mangiapane
 .cm-s-custom.CodeMirror {
     background: white;
     color: inherit;
-    font-family: 'Source Code Pro';
-    height: calc(100% - 24px - 16px - 1px);
+    font-family: 'Roboto Mono';
+    height: calc(100%);
 }
 
 .cm-s-custom.CodeMirror span.CodeMirror-matchingbracket { color: #7EFC7E; }
