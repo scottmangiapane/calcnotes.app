@@ -4,8 +4,6 @@ Originally ported to CodeMirror by Peter Kroon
 Modified by Scott Mangiapane
 */
 
-.cm-s-custom pre { padding: 0 8px; }
-
 .cm-s-custom.CodeMirror {
     background: white;
     color: inherit;

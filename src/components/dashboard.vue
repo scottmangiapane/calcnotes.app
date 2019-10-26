@@ -1,10 +1,13 @@
 <template>
     <div class='dashboard'>
         <div class='horizontal-full'>
-            <editor class='horizontal-half'></editor>
+            <div class='horizontal-half'>
+                <editor class='fill-height'></editor>
+            </div>
             <div class='horizontal-half'>
                 <textarea
                     v-model='results'
+                    class='fill-height'
                     name='output'
                     readonly>
                 </textarea>
@@ -29,7 +32,7 @@ export default {
                 const input = this.$store.state.input;
                 const solution = evaluate(input).entries || [];
                 solution.forEach(item => {
-                    if (typeof item !== 'function') {
+                    if (item != '[object Object]' && typeof item !== 'function') {
                         output = output.concat(item);
                     }
                     output = output.concat('\n');

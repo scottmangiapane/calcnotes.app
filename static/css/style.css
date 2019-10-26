@@ -48,7 +48,6 @@ textarea {
     background-color: transparent;
     border: none;
     font-family: 'Roboto Mono';
-    height: 100%;
     outline: none;
     padding: 4px 0;
     resize: none;
@@ -95,6 +94,10 @@ textarea {
     overflow: auto;
 }
 
+.fill-height {
+    height: 100%;
+}
+
 .horizontal-full {
     display: flex;
     height: calc(100% - 12px * 2);
@@ -105,7 +108,7 @@ textarea {
 .horizontal-half {
     height: calc(100% - 12px * 2);
     padding: 12px;
-    width: 50%;
+    width: calc(50% - 12px * 2)
 }
 
 .titlebar {
