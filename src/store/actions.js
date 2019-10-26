@@ -1,3 +1,3 @@
-export const loadResults = ({ commit }, results) => {
-    commit('LOAD_RESULTS', { results });
+export const loadInput = ({ commit }, input) => {
+    commit('LOAD_INPUT', { input });
 }

@@ -12,7 +12,7 @@ const settings = new Settings();
 
 const state = {
     dark: settings.get('dark'),
-    results: ''
+    input: ''
 };
 
 export default new Vuex.Store({

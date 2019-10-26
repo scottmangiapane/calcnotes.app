@@ -23,7 +23,11 @@ export default {
     },
     computed: {
         results() {
-            return this.$store.state.results;
+            const input = this.$store.state.input;
+            try {
+                return evaluate(input);
+            } catch (e) { /* do nothing */ }
+            return '';
         }
     }
 };

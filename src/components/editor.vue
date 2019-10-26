@@ -2,7 +2,7 @@
     <codemirror
         v-model='code'
         :options='editorOptions'
-        @input='loadResults'>
+        @input='loadInput'>
     </codemirror>
 </template>
 
@@ -19,7 +19,7 @@ export default {
     },
     data() {
         return {
-            code: 'const a = 10;',
+            code: '',
             editorOptions: {
                 autofocus: true,
                 lineNumbers: true,
@@ -30,11 +30,6 @@ export default {
             }
         };
     },
-    methods: {
-        loadResults: (code) => {
-            loadResults(code);
-        }
-    },
-    methods: mapActions(['loadResults'])
+    methods: mapActions(['loadInput'])
 };
 </script>
