@@ -1,5 +1,5 @@
 <template>
-    <div class="center-content titlebar">
+    <div class='center-content titlebar'>
         <p>Calculator</p>
     </div>
 </template>

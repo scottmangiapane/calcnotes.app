@@ -1,5 +1,5 @@
 <template>
-    <div id="app" v-bind:class="{dark}">
+    <div id='app' :class='{dark}'>
         <titlebar></titlebar>
         <dashboard></dashboard>
     </div>

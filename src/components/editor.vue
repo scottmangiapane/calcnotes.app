@@ -1,11 +1,16 @@
 <template>
-    <codemirror v-model="code" v-bind:options="editorOptions"></codemirror>
+    <codemirror
+        v-model='code'
+        :options='editorOptions'
+        @input='loadResults'>
+    </codemirror>
 </template>
 
 <script>
+import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/mode/sql/sql';
 import { codemirror } from 'vue-codemirror';
+import { mapActions } from 'vuex';
 
 export default {
     name: 'editor',
@@ -14,15 +19,22 @@ export default {
     },
     data() {
         return {
-            code: '',
+            code: 'const a = 10;',
             editorOptions: {
                 autofocus: true,
                 lineNumbers: true,
                 lineWrapping: true,
-                mode: 'text/x-sql',
+                mode: 'text/javascript',
+                smartIndent: false,
                 theme: 'custom'
             }
         };
-    }
+    },
+    methods: {
+        loadResults: (code) => {
+            loadResults(code);
+        }
+    },
+    methods: mapActions(['loadResults'])
 };
 </script>

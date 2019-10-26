@@ -1,8 +1,13 @@
 <template>
-    <div class="dashboard">
+    <div class='dashboard'>
         <div class='horizontal-full'>
             <editor class='horizontal-half'></editor>
-            <textarea class='horizontal-half' name='output' readonly></textarea>
+            <textarea
+                v-model='results'
+                class='horizontal-half'
+                name='output'
+                readonly>
+            </textarea>
         </div>
     </div>
 </template>
@@ -15,6 +20,11 @@ export default {
     name: 'dashboard',
     components: {
         editor
+    },
+    computed: {
+        results() {
+            return this.$store.state.results;
+        }
     }
 };
 </script>
