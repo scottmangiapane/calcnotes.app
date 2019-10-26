@@ -2,12 +2,13 @@
     <div class='dashboard'>
         <div class='horizontal-full'>
             <editor class='horizontal-half'></editor>
-            <textarea
-                v-model='results'
-                class='horizontal-half'
-                name='output'
-                readonly>
-            </textarea>
+            <div class='horizontal-half'>
+                <textarea
+                    v-model='results'
+                    name='output'
+                    readonly>
+                </textarea>
+            </div>
         </div>
     </div>
 </template>

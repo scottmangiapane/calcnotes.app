@@ -48,7 +48,9 @@ textarea {
     background-color: transparent;
     border: none;
     font-family: 'Roboto Mono';
+    height: 100%;
     outline: none;
+    padding: 4px 0;
     resize: none;
 }
 
