@@ -23,7 +23,6 @@ export default {
             editorOptions: {
                 autofocus: true,
                 lineNumbers: true,
-                lineWrapping: true,
                 mode: 'text/javascript',
                 smartIndent: false,
                 theme: 'custom'

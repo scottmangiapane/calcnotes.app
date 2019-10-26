@@ -23,11 +23,18 @@ export default {
     },
     computed: {
         results() {
-            const input = this.$store.state.input;
+            let output = '';
             try {
-                return evaluate(input);
+                const input = this.$store.state.input;
+                const solution = evaluate(input).entries || [];
+                solution.forEach(item => {
+                    if (typeof item !== 'function') {
+                        output = output.concat(item);
+                    }
+                    output = output.concat('\n');
+                });
             } catch (e) { /* do nothing */ }
-            return '';
+            return output;
         }
     }
 };
