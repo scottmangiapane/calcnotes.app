@@ -44,13 +44,11 @@ input:focus {
     outline: 0;
 }
 
-textarea {
-    background-color: transparent;
-    border: none;
+ul {
     font-family: 'Roboto Mono';
-    outline: none;
+    list-style-type: none;
+    overflow: scroll;
     padding: 4px 0;
-    resize: none;
 }
 
 ::-webkit-scrollbar {
@@ -94,8 +92,9 @@ textarea {
     overflow: auto;
 }
 
-.fill-height {
+.fill {
     height: 100%;
+    width: 100%;
 }
 
 .horizontal-full {
@@ -109,6 +108,16 @@ textarea {
     height: calc(100% - 12px * 2);
     padding: 12px;
     width: calc(50% - 12px * 2)
+}
+
+.solution:active {
+    background-color: #1976D2;
+}
+
+.solution:hover {
+    background-color: #2196F3;
+    border-radius: 4px;
+    color: white;
 }
 
 .titlebar {

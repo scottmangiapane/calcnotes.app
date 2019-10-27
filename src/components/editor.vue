@@ -1,8 +1,8 @@
 <template>
     <codemirror
-        v-model='code'
-        :options='editorOptions'
-        @input='loadInput'>
+            v-model='code'
+            :options='options'
+            @input='loadInput'>
     </codemirror>
 </template>
 
@@ -20,9 +20,8 @@ export default {
     data() {
         return {
             code: '',
-            editorOptions: {
+            options: {
                 autofocus: true,
-                lineNumbers: true,
                 mode: 'text/javascript',
                 smartIndent: false,
                 theme: 'custom'
