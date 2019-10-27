@@ -8,6 +8,7 @@
                 {{ result }}
             </p>
             <br v-else>
+            <div class='clear'></div>
         </li>
     </ul>
 </template>
@@ -37,7 +38,6 @@ export default {
         copy: (event) => {
             const text = event.target.innerText;
             clipboard.writeText(text);
-            alert("Copied the text: " + text);
         }
     }
 };

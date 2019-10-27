@@ -45,6 +45,7 @@ input:focus {
 }
 
 ul {
+    direction: rtl;
     font-family: 'Roboto Mono';
     list-style-type: none;
     overflow: scroll;
@@ -110,13 +111,19 @@ ul {
     width: calc(50% - 12px * 2)
 }
 
-.solution:active {
-    background-color: #1976D2;
+.solution {
+    border-radius: 4px;
+    float: right;
+    padding: 0 4px;
 }
 
 .solution:hover {
     background-color: #2196F3;
-    border-radius: 4px;
+    color: white;
+}
+
+.solution:hover:active {
+    background-color: #1976D2;
     color: white;
 }
 
