@@ -1,6 +1,7 @@
 * {
     color: inherit;
     font: inherit;
+    line-height: inherit;
     margin: 0;
     padding: 0;
 }
@@ -13,6 +14,7 @@ a {
 body, html, #app {
     height: 100%;
     font: caption;
+    line-height: 1.6;
     user-select: none;
     -webkit-user-select: none;
     width: 100%;
@@ -42,14 +44,6 @@ input[type=button]:disabled {
 
 input:focus {
     outline: 0;
-}
-
-ul {
-    direction: rtl;
-    font-family: 'Roboto Mono';
-    list-style-type: none;
-    overflow: scroll;
-    padding: 4px 0;
 }
 
 ::-webkit-scrollbar {
@@ -120,11 +114,18 @@ ul {
 .solution:hover {
     background-color: #2196F3;
     color: white;
+    cursor: pointer;
 }
 
 .solution:hover:active {
     background-color: #1976D2;
     color: white;
+}
+
+.solutions-wrapper {
+    font-family: 'Roboto Mono';
+    overflow: auto;
+    padding: 4px 0;
 }
 
 .titlebar {

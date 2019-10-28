@@ -1,6 +1,6 @@
 <template>
-    <ul>
-        <li v-for='result in results'>
+    <div class='solutions-wrapper'>
+        <div v-for='result in results'>
             <p
                     class='solution'
                     @click='copy'
@@ -9,8 +9,8 @@
             </p>
             <br v-else>
             <div class='clear'></div>
-        </li>
-    </ul>
+        </div>
+    </div>
 </template>
 
 <script>
