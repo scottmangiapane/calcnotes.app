@@ -3,11 +3,11 @@
     "version": "0.1.0",
     "author": "Scott Mangiapane",
     "license": "GPL-3.0",
-    "description": "",
+    "description": "A notepad calculator app",
     "scripts": {
         "build": "webpack",
         "build:watch": "webpack --watch",
-        "dist": "webpack && electron-builder",
+        "dist": "NODE_ENV=production webpack && electron-builder",
         "start": "electron index.js",
         "start:watch": "nodemon --exec 'electron index.js'"
     },
@@ -35,7 +35,8 @@
         "vue-loader": "^15.7.1",
         "vue-template-compiler": "^2.6.10",
         "webpack": "^4.41.2",
-        "webpack-cli": "^3.3.9"
+        "webpack-cli": "^3.3.9",
+        "webpack-obfuscator": "^0.18.3"
     },
     "dependencies": {
         "electron-store": "^5.0.0",

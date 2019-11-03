@@ -11,7 +11,7 @@ const settings = new Settings();
 app.on('ready', () => {
     let mainWindowState = windowState({
         defaultWidth: 400,
-        defaultHeight: 800
+        defaultHeight: 600
     });
 
     mainWindow = new BrowserWindow({
