@@ -7,10 +7,11 @@
 </template>
 
 <script>
-import 'codemirror/mode/javascript/javascript.js';
-import 'codemirror/lib/codemirror.css';
 import { codemirror } from 'vue-codemirror';
 import { mapActions } from 'vuex';
+
+import 'codemirror/mode/javascript/javascript.js';
+import 'codemirror/lib/codemirror.css';
 
 export default {
     name: 'editor',

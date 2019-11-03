@@ -68,6 +68,18 @@ input:focus {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.banner {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.banner-wrapper {
+    background-color: #FF9800;
+    height: 38px;
+    padding: 0 calc(24px + 4px);
+}
+
 .center-content {
     align-items: center;
     display: flex;
@@ -85,6 +97,10 @@ input:focus {
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     height: calc(100% - 38px - 1px);
     overflow: auto;
+}
+
+.dashboard.dashboard-small {
+    height: calc(100% - 2 * 38px - 1px);
 }
 
 .fill {

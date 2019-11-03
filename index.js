@@ -20,7 +20,7 @@ app.on('ready', () => {
         width: mainWindowState.width,
         height: mainWindowState.height,
         minWidth: 400,
-        minHeight: 100,
+        minHeight: 200,
         backgroundColor: (settings.get('dark')) ? '#292929' : '#FFFFFF',
         title: 'Calculator',
         titleBarStyle: 'hiddenInset',
