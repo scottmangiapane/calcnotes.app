@@ -12,7 +12,9 @@ const settings = new Settings();
 
 const state = {
     dark: settings.get('dark'),
-    input: ''
+    email: settings.get('email') || '',
+    input: '',
+    signature: settings.get('signature') || ''
 };
 
 export default new Vuex.Store({
