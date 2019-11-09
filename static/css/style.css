@@ -69,13 +69,10 @@ input:focus {
 }
 
 .banner {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    background-color: #FF9800;
 }
 
-.banner-wrapper {
-    background-color: #FF9800;
+.bar {
     height: 38px;
     padding: 0 calc(24px + 4px);
 }
@@ -101,6 +98,12 @@ input:focus {
 
 .dashboard.dashboard-small {
     height: calc(100% - 2 * 38px - 1px);
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .fill {
@@ -140,13 +143,12 @@ input:focus {
 
 .solutions-wrapper {
     font-family: 'Roboto Mono';
-    overflow: auto;
+    overflow-x: auto;
     padding: 4px 0;
 }
 
 .titlebar {
     -webkit-app-region: drag;
-    height: 38px;
 }
 
 #app {

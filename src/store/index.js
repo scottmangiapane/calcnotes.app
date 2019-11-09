@@ -11,10 +11,17 @@ Vue.use(Vuex);
 const settings = new Settings();
 
 const state = {
+    license: {
+        data: {
+            email: settings.get('license.data.email') || '',
+            purchaseIp: settings.get('license.data.purchaseIp') || '',
+            purchaseDate: settings.get('license.data.purchaseDate') || '',
+            majorVersion: settings.get('license.data.majorVersion') || ''
+        },
+        signature: settings.get('license.signature') || ''
+    },
     dark: settings.get('dark'),
-    email: settings.get('email') || '',
-    input: '',
-    signature: settings.get('signature') || ''
+    input: ''
 };
 
 export default new Vuex.Store({

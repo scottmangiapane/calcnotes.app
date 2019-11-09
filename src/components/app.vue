@@ -27,7 +27,7 @@ export default {
         },
         validKey() {
             const verify = crypto.createVerify('SHA256');
-            verify.update(this.$store.state.email);
+            verify.update(JSON.stringify(this.$store.state.license.data));
             verify.end();
             return verify.verify(
                 crypto.createPublicKey(
@@ -41,7 +41,7 @@ export default {
                         + '0wIDAQAB\n'
                         + '-----END PUBLIC KEY-----\n'
                 ),
-                Buffer.from(this.$store.state.signature, 'hex')
+                Buffer.from(this.$store.state.license.signature, 'hex')
             );
         }
     },
@@ -50,7 +50,7 @@ export default {
             this.$store.commit('INVERT');
         });
         setTimeout(() => {
-            if (!this.validKey && !Math.floor(Math.random() * 5)) {
+            if (!this.validKey && !Math.floor(Math.random() * 3)) {
                 remote.dialog.showMessageBox({
                     message: 'Thanks for using Calculator! If you enjoy this app, please purchase a'
                             + ' license key. You don\'t need a license key to continue using this a'

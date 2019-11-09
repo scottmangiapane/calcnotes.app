@@ -1,7 +1,7 @@
 const JavaScriptObfuscator = require('webpack-obfuscator');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-const mode = process.env.NODE_ENV || 'development'
+const mode = process.env.NODE_ENV || 'development';
 
 const config = {
     mode,

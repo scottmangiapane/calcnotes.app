@@ -1,8 +1,7 @@
 <template>
     <div class='solutions-wrapper'>
-        <div v-for='result in results'>
+        <div class='solution' v-for='result in results'>
             <p
-                    class='solution'
                     @click='copy'
                     v-if='result && typeof result !== "function"'>
                 {{ result }}

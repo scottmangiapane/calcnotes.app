@@ -75,19 +75,9 @@ app.on('ready', () => {
                     label: 'Invert',
                     accelerator: 'CmdOrCtrl+I',
                     click() {
-                        if (settings.get('dark')) {
-                            settings.delete('dark');
-                        } else {
-                            settings.set('dark', 'true');
-                        }
+                        const isDark = settings.get('dark');
+                        settings.set('dark', !isDark);
                         mainWindow.webContents.send('invert');
-                    }
-                },
-                {
-                    label: 'Refresh',
-                    accelerator: 'CmdOrCtrl+R',
-                    click() {
-                        mainWindow.webContents.send('refresh');
                     }
                 }
             ]

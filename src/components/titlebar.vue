@@ -1,6 +1,6 @@
 <template>
-    <div class='center-content titlebar'>
-        <p>Calculator</p>
+    <div class='bar center-content titlebar'>
+        <p class='ellipsis'>Calculator</p>
     </div>
 </template>
 
