@@ -1,7 +1,10 @@
 <template>
     <div class='solutions-wrapper'>
-        <div class='solution' v-for='result in results'>
+        <div
+                v-for='(result, index) in results'
+                :key='index'>
             <p
+                    class='solution'
                     @click='copy'
                     v-if='result && typeof result !== "function"'>
                 {{ result }}

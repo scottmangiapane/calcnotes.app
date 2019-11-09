@@ -1,12 +1,11 @@
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, dialog, Menu } = require('electron');
 const Settings = require('electron-store');
 const windowState = require('electron-window-state');
 const path = require('path');
 const url = require('url');
 
-let mainWindow;
-
 const settings = new Settings();
+let mainWindow;
 
 app.on('ready', () => {
     let mainWindowState = windowState({
@@ -22,7 +21,7 @@ app.on('ready', () => {
         minWidth: 400,
         minHeight: 200,
         backgroundColor: (settings.get('dark')) ? '#292929' : '#FFFFFF',
-        title: 'Calculator',
+        title: process.env.npm_package_build_productName,
         titleBarStyle: 'hiddenInset',
         webPreferences: {
             nodeIntegration: true
@@ -48,6 +47,19 @@ app.on('ready', () => {
         {
             label: 'File',
             submenu: [
+                { label: `About ${ process.env.npm_package_build_productName }`, click() {
+                    dialog.showMessageBox({
+                        message: process.env.npm_package_build_productName
+                                + ' v' + process.env.npm_package_version + '.\n'
+                                + process.env.npm_package_build_copyright + '.'
+                    });
+                }},
+                { label: `View License`, click() {
+                    dialog.showMessageBox({
+                        message: JSON.stringify(settings.get('license.data'))
+                    });
+                }},
+                { type: "separator" },
                 { label: 'Quit', accelerator: 'CmdOrCtrl+Q', click() { app.quit(); } },
             ]
         }, {

@@ -52,10 +52,10 @@ export default {
         setTimeout(() => {
             if (!this.validKey && !Math.floor(Math.random() * 3)) {
                 remote.dialog.showMessageBox({
-                    message: 'Thanks for using Calculator! If you enjoy this app, please purchase a'
-                            + ' license key. You don\'t need a license key to continue using this a'
-                            + 'pp but it is appreciated as it helps support my work. It will also r'
-                            + 'emove this popup.'
+                    message: `Thanks for using ${ process.env.npm_package_build_productName }! If y`
+                            + `ou enjoy this app, please purchase a license key. You don't need a l`
+                            + `icense key to continue using this app but it is appreciated as it he`
+                            + `lps support my work. It will also remove this popup.`
                 });
             }
         }, 0);
