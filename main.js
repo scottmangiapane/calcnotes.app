@@ -1,8 +1,6 @@
 const { app, BrowserWindow, dialog, Menu } = require('electron');
 const Settings = require('electron-store');
 const windowState = require('electron-window-state');
-const path = require('path');
-const url = require('url');
 
 const settings = new Settings();
 let mainWindow;
@@ -36,10 +34,10 @@ app.on('ready', () => {
         event.preventDefault();
     });
 
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file:'
-    }));
+    mainWindow.loadURL(app.isPackaged
+        ? `file://${join(__dirname, '../build/index.html')}`
+        : 'http://localhost:3000'
+    );
 
     mainWindowState.manage(mainWindow);
 
@@ -54,24 +52,19 @@ app.on('ready', () => {
                                 + process.env.npm_package_build_copyright + '.'
                     });
                 }},
-                { label: `View License`, click() {
-                    dialog.showMessageBox({
-                        message: JSON.stringify(settings.get('license.data'))
-                    });
-                }},
-                { type: "separator" },
+                { type: 'separator' },
                 { label: 'Quit', accelerator: 'CmdOrCtrl+Q', click() { app.quit(); } },
             ]
         }, {
-            label: "Edit",
+            label: 'Edit',
             submenu: [
-                { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
-                { label: "Redo", accelerator: "CmdOrCtrl+Shift+Z", selector: "redo:" },
-                { type: "separator" },
-                { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
-                { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
-                { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
-                { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
+                { label: 'Undo', accelerator: 'CmdOrCtrl+Z', selector: 'undo:' },
+                { label: 'Redo', accelerator: 'CmdOrCtrl+Shift+Z', selector: 'redo:' },
+                { type: 'separator' },
+                { label: 'Cut', accelerator: 'CmdOrCtrl+X', selector: 'cut:' },
+                { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
+                { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' },
+                { label: 'Select All', accelerator: 'CmdOrCtrl+A', selector: 'selectAll:' }
             ]
         }, {
             label: 'View',

@@ -1,0 +1,5 @@
+p::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+}
