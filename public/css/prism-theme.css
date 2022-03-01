@@ -1,4 +1,7 @@
-/* https://github.com/PrismJS/prism-themes/blob/master/themes/prism-material-dark.css */
+/*
+ * Prism material ocean theme downloaded from:
+ * https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-material-oceanic.css
+ */
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -7,8 +10,8 @@ pre[class*="language-"] {
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-	color: #eee;
-	background: #2f2f2f;
+	color: #c3cee3;
+	background: #263238;
 	font-family: Roboto Mono, monospace;
 	font-size: 1em;
 	line-height: 1.5em;
@@ -69,11 +72,11 @@ pre[class*="language-"] {
 }
 
 .token.attr-value {
-	color: #a5e844;
+	color: #c3e88d;
 }
 
 .token.attribute {
-	color: #a5e844;
+	color: #c3e88d;
 }
 
 .token.boolean {
@@ -100,8 +103,12 @@ pre[class*="language-"] {
 	color: #f2ff00;
 }
 
+.token.color {
+	color: #f2ff00;
+}
+
 .token.comment {
-	color: #616161;
+	color: #546e7a;
 }
 
 .token.constant {
@@ -109,15 +116,15 @@ pre[class*="language-"] {
 }
 
 .token.deleted {
-	color: #ff6666;
+	color: #f07178;
 }
 
 .token.doctype {
-	color: #616161;
+	color: #546e7a;
 }
 
 .token.entity {
-	color: #ff6666;
+	color: #f07178;
 }
 
 .token.function {
@@ -144,6 +151,7 @@ pre[class*="language-"] {
 
 .token.keyword {
 	color: #c792ea;
+	font-style: italic;
 }
 
 .token.number {
@@ -155,7 +163,7 @@ pre[class*="language-"] {
 }
 
 .token.prolog {
-	color: #616161;
+	color: #546e7a;
 }
 
 .token.property {
@@ -163,11 +171,11 @@ pre[class*="language-"] {
 }
 
 .token.pseudo-class {
-	color: #a5e844;
+	color: #c3e88d;
 }
 
 .token.pseudo-element {
-	color: #a5e844;
+	color: #c3e88d;
 }
 
 .token.punctuation {
@@ -179,11 +187,11 @@ pre[class*="language-"] {
 }
 
 .token.selector {
-	color: #ff6666;
+	color: #f07178;
 }
 
 .token.string {
-	color: #a5e844;
+	color: #c3e88d;
 }
 
 .token.symbol {
@@ -191,17 +199,17 @@ pre[class*="language-"] {
 }
 
 .token.tag {
-	color: #ff6666;
+	color: #f07178;
 }
 
 .token.unit {
-	color: #fd9170;
+	color: #f07178;
 }
 
 .token.url {
-	color: #ff6666;
+	color: #fd9170;
 }
 
 .token.variable {
-	color: #ff6666;
+	color: #f07178;
 }

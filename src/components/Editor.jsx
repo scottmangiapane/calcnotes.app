@@ -4,7 +4,6 @@ import Prism from 'prismjs';
 import { AppContext } from '../App';
 
 import './Editor.css';
-import './PrismTheme.css';
 
 function syncScroll(editingRef, highlightingRef) {
   if (editingRef?.current && highlightingRef?.current) {
