@@ -18,7 +18,7 @@ app.on('ready', () => {
         height: mainWindowState.height,
         minWidth: 400,
         minHeight: 200,
-        backgroundColor: (settings.get('dark')) ? '#292929' : '#FFFFFF',
+        backgroundColor: '#2f2f2f',
         title: process.env.npm_package_build_productName,
         titleBarStyle: 'hiddenInset',
         webPreferences: {

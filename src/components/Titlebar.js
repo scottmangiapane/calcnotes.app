@@ -1,3 +1,5 @@
+import './Titlebar.css';
+
 function Titlebar() {
   return (
     <div className='bar center-content titlebar'>

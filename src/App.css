@@ -1,6 +1,7 @@
 * {
-    color: inherit;
+    color: white;
     font-family: 'Roboto Mono';
+    font-size: 14px;
     line-height: inherit;
     margin: 0;
     padding: 0;
@@ -12,8 +13,8 @@ a {
 }
 
 body, html, #root, .App {
+    background-color: #2f2f2f;
     height: 100%;
-    font: caption;
     line-height: 1.6;
     user-select: none;
     -webkit-user-select: none;
@@ -38,11 +39,6 @@ input[type=button]:disabled { opacity: 0.5; }
 
 input:focus { outline: 0; }
 
-.App {
-    background-color: #2f2f2f;
-    color: white;
-}
-
 .bar {
     height: 38px;
     padding: 0 calc(24px + 4px);
@@ -58,12 +54,10 @@ input:focus { outline: 0; }
 .clear { clear: both; }
 
 .dashboard {
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    height: calc(100% - 38px - 1px);
-    overflow: auto;
+    height: calc(100% - 38px - 1px - 32px);
+    padding: 16px;
+    overflow-y: scroll;
 }
-
 
 .ellipsis {
     overflow: hidden;
@@ -84,26 +78,5 @@ input:focus { outline: 0; }
 
 .horizontal-half {
     height: 100%;
-    width: 100%;
+    width: 50%;
 }
-
-.solution {
-    border-radius: 4px;
-    padding: 0 4px;
-    text-align: right;
-}
-
-.solution:hover {
-    background-color: #2196f3;
-    color: white;
-    cursor: pointer;
-}
-
-.solution:hover:active {
-    background-color: #1976d2;
-    color: white;
-}
-
-.solutions-wrapper { overflow-x: auto; }
-
-.titlebar { -webkit-app-region: drag; }

@@ -18,24 +18,28 @@ function reducer(state, action) {
 
 const initialState = { text: '' };
 
-export default () => {
+function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div className='App'>
       <Titlebar />
       <div className='dashboard'>
-        <AppContext.Provider value={{ state, dispatch }}>
-          <div className='horizontal-full'>
-            <div className='horizontal-half'>
-              <Editor className='fill' />
+        <div>
+          <AppContext.Provider value={{ state, dispatch }}>
+            <div className='horizontal-full'>
+              <div className='horizontal-half'>
+                <Editor className='fill' />
+              </div>
+              <div className='horizontal-half'>
+                <Solutions className='fill' />
+              </div>
             </div>
-            <div className='horizontal-half'>
-              <Solutions className='fill' />
-            </div>
+            </AppContext.Provider>
           </div>
-          </AppContext.Provider>
       </div>
     </div>
   );
 };
+
+export default App;

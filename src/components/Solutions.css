@@ -1,5 +1,28 @@
-p::after {
+.solution {
+    border-radius: 4px;
+    display: inline;
+    padding: 0 4px;
+    text-align: right;
+}
+
+.solution::after {
     content: '';
     display: inline-block;
     width: 0;
+}
+
+.solution:hover {
+    background-color: #2196f3;
+    color: white;
+    cursor: pointer;
+}
+
+.solution:hover:active {
+    background-color: #1976d2;
+    color: white;
+}
+
+.solution-wrapper {
+    display: block;
+    text-align: right;
 }

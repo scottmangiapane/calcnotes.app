@@ -1,6 +1,4 @@
 .DS_Store
 .env
 build
-creds
-dist
 node_modules

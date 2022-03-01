@@ -2,9 +2,8 @@
   "name": "notepad-calculator",
   "version": "0.1.0",
   "private": true,
-  "main": "main.js",
+  "main": "electron.js",
   "dependencies": {
-    "electron": "^17.1.0",
     "electron-store": "^8.0.1",
     "electron-window-state": "^5.0.3",
     "mathjs": "^10.1.1",
@@ -13,6 +12,9 @@
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "electron": "^17.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

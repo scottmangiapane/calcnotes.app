@@ -7,11 +7,12 @@ import { AppContext } from '../App';
 import './Solutions.css';
 
 function copyEvent(event) {
+  console.log(event.target.innerText);
   // const text = event.target.innerText;
   // clipboard.writeText(text);
 }
 
-export default () => {
+function Solutions() {
   const { state } = useContext(AppContext);
   const scope = {};
   const solutions = [];
@@ -26,17 +27,13 @@ export default () => {
           : JSON.stringify(solution);
     } catch (e) { /* do nothing */ }
     solutions.push(
-      <p
-        key={ index }
-        className='solution'
-        onClick={ copyEvent }
-      >{ solution }</p>
+      <div key={ index } className='ellipsis solution-wrapper'>
+        <p className='solution' onClick={ copyEvent }>{ solution }</p>
+      </div>
     );
   }
 
-  return (
-    <div className='solutions-wrapper'>
-      { solutions }
-    </div>
-  );
+  return <>{ solutions }</>;
 }
+
+export default Solutions;
