@@ -5,12 +5,6 @@
     text-align: right;
 }
 
-.solution::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-}
-
 .solution:hover {
     background-color: #2196f3;
     color: white;
@@ -21,6 +15,12 @@
     background-color: #1976d2;
     color: white;
 }
+
+.solution-boolean { color: #c792ea; }
+
+.solution-number { color: #fd9170; }
+
+.solution-string { color: #c3e88d; }
 
 .solution-wrapper {
     display: block;

@@ -2,7 +2,7 @@
 import { evaluate } from 'mathjs';
 import { useContext } from 'react';
 
-import { AppContext } from '../App';
+import { AppContext } from './App';
 
 import './Solutions.css';
 
@@ -19,16 +19,37 @@ function Solutions() {
   const lines = state.text.split('\n');
 
   for (const [index, line] of lines.entries()) {
-    let solution;
+    let output;
     try {
-        solution = evaluate(line, scope);
-        solution = (typeof solution == 'number')
-          ? Math.round(solution * 100) / 100
-          : JSON.stringify(solution);
-    } catch (e) { /* do nothing */ }
+        output = evaluate(line, scope);
+    } catch (e) { }
+    let solution;
+    switch (typeof output) {
+      case 'boolean':
+        solution = (
+          <p className='solution solution-boolean' onClick={ copyEvent }>
+            { JSON.stringify(output) }
+          </p>
+        );
+        break;
+      case 'number':
+        const rounded = Math.round(output * 100) / 100;
+        solution = (
+          <p className='solution solution-number' onClick={ copyEvent }>
+            { rounded }
+          </p>
+        );
+        break;
+      default:
+        solution = (
+          <p className='solution solution-string' onClick={ copyEvent }>
+            { JSON.stringify(output) }
+          </p>
+        );
+    }
     solutions.push(
       <div key={ index } className='ellipsis solution-wrapper'>
-        <p className='solution' onClick={ copyEvent }>{ solution }</p>
+        { solution }
       </div>
     );
   }

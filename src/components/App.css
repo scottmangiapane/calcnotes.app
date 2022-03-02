@@ -1,0 +1,45 @@
+p, pre, textarea {
+    color: white;
+    font-family: 'Roboto Mono';
+    font-size: 14px;
+    line-height: 1.6em;
+    user-select: none;
+}
+
+body, div, html, p, pre, textarea {
+    margin: 0;
+    padding: 0;
+}
+
+/* body, html, .App, .dashboard, #root {
+    min-height: 100%;
+    overflow: auto;
+} */
+
+html { background-color: #263238; }
+
+.bar {
+    height: 38px;
+    padding: 0 calc(24px + 4px);
+}
+
+.center-content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* .dashboard { overflow-y: scroll; } */
+
+.ellipsis {
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fill {
+    height: 100%;
+    width: 100%;
+}

@@ -29,8 +29,8 @@
 }
 
 #edit, #highlight, #highlight * {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    font-family: 'Roboto Mono';
+    font-size: 14px;
+    line-height: 1.6em;
     tab-size: inherit;
 }

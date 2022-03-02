@@ -1,0 +1,8 @@
+.Divider {
+    cursor: col-resize;
+    background-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    width: 2px;
+}
+
+.Divider:hover { background-color: rgba(255, 255, 255, 0.2); }

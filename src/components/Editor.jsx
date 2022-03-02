@@ -1,7 +1,7 @@
 import { createRef, useContext, useEffect, useState } from 'react';
 import Prism from 'prismjs';
 
-import { AppContext } from '../App';
+import { AppContext } from './App';
 
 import './Editor.css';
 
