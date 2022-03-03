@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className='app'>
       <Titlebar />
       <div className='dashboard'>
         <AppContext.Provider value={{ state, dispatch }}>

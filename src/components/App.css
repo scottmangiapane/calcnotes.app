@@ -11,10 +11,9 @@ body, div, html, p, pre, textarea {
     padding: 0;
 }
 
-/* body, html, .App, .dashboard, #root {
-    min-height: 100%;
-    overflow: auto;
-} */
+body, html, .app, #root {
+    height: 100%;
+}
 
 html { background-color: #263238; }
 
@@ -30,7 +29,10 @@ html { background-color: #263238; }
     justify-content: center;
 }
 
-/* .dashboard { overflow-y: scroll; } */
+.dashboard {
+    height: calc(100% - 38px);
+    overflow: auto;
+}
 
 .ellipsis {
     color: white;

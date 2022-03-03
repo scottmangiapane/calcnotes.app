@@ -1,9 +1,3 @@
-.SplitPane {
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
-
 .divider {
     cursor: col-resize;
     user-select: none;
@@ -19,15 +13,21 @@
 .divider:hover > div { background-color: rgba(255, 255, 255, 0.2); }
 
 .pane {
-    height: 100%;
     min-width: 100px;
-    width: 50%;
 }
 
 .pane-left {
     margin: 16px 8px 16px 16px;
+    width: 75%;
 }
 
 .pane-right {
     margin: 16px 16px 16px 8px;
+    width: 25%;
+}
+
+.split-pane {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
 }

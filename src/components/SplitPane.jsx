@@ -49,7 +49,7 @@ function SplitPane({ left, right }) {
   }
 
   return (
-    <div className='SplitPane'>
+    <div className='split-pane'>
       <div ref={ leftPaneRef } className='pane pane-left'>{ left }</div>
       <div
         ref={ dividerRef }
