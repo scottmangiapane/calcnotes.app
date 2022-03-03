@@ -18,11 +18,15 @@ function Editor() {
     }
   });
 
+  function onInput(event) {
+    setRows( event.target.value.split('\n').length );
+    dispatch({ type: 'UPDATE_INPUT', data: event.target.value });
+    syncScroll();
+  }
+
   function syncScroll() {
-    if (editingRef?.current && highlightingRef?.current) {
-      highlightingRef.current.scrollLeft = editingRef.current.scrollLeft;
-      highlightingRef.current.scrollTop = editingRef.current.scrollTop;
-    }
+    highlightingRef.current.scrollLeft = editingRef.current.scrollLeft;
+    highlightingRef.current.scrollTop = editingRef.current.scrollTop;
   }
 
   return (
@@ -33,11 +37,7 @@ function Editor() {
         autoFocus
         rows={ rows }
         spellCheck='false'
-        onInput={ (event) => {
-          setRows( event.target.value.split('\n').length );
-          dispatch({ type: 'UPDATE_INPUT', data: event.target.value });
-          syncScroll();
-        } }
+        onInput={ onInput }
         onScroll={ syncScroll }
       />
       <pre ref={ highlightingRef } id='highlight'>

@@ -30,15 +30,17 @@ function SplitPane({ left, right }) {
   }
 
   function onMouseMove(event) {
-    if (mouseDown && dividerRef.current && leftPaneRef.current && rightPaneRef.current) {
+    if (mouseDown) {
       const delta = {
         x: event.clientX - mouse.event.clientX,
         y: event.clientY - mouse.event.clientY
       };
       delta.x = Math.min(Math.max(delta.x, -mouse.firstWidth), mouse.secondWidth);
-      dividerRef.current.style.left = mouse.offsetLeft + delta.x + 'px';
-      leftPaneRef.current.style.width = (mouse.firstWidth + delta.x) + 'px';
-      rightPaneRef.current.style.width = (mouse.secondWidth - delta.x) + 'px';
+      const totalPercent = mouse.firstWidth + mouse.secondWidth;
+      const leftPercent = 100 * (mouse.firstWidth + delta.x) / totalPercent;
+      const rightPercent = 100 * (mouse.secondWidth - delta.x) / totalPercent;
+      leftPaneRef.current.style.width = leftPercent + '%';
+      rightPaneRef.current.style.width = rightPercent + '%';
     }
   }
 
@@ -48,13 +50,14 @@ function SplitPane({ left, right }) {
 
   return (
     <div className='SplitPane'>
-      <div ref={ leftPaneRef } className='pane'>{ left }</div>
+      <div ref={ leftPaneRef } className='pane pane-left'>{ left }</div>
       <div
         ref={ dividerRef }
         className='divider'
         onMouseDown={ onMouseDown }>
+        <div></div>
       </div>
-      <div ref={ rightPaneRef } className='pane'>{ right }</div>
+      <div ref={ rightPaneRef } className='pane pane-right'>{ right }</div>
     </div>
   );
 };
