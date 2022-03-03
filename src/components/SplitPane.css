@@ -1,0 +1,21 @@
+.SplitPane {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.divider {
+    cursor: col-resize;
+    background-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    width: 20px;
+}
+
+.divider:hover { background-color: rgba(255, 255, 255, 0.2); }
+
+.pane {
+    height: 100%;
+    min-width: 20px;
+    padding: 16px;
+    width: 50%;
+}

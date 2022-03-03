@@ -5,27 +5,25 @@ import { AppContext } from './App';
 
 import './Editor.css';
 
-function syncScroll(editingRef, highlightingRef) {
-  if (editingRef?.current && highlightingRef?.current) {
-    highlightingRef.current.scrollLeft = editingRef.current.scrollLeft;
-    highlightingRef.current.scrollTop = editingRef.current.scrollTop;
-  }
-}
-
 function Editor() {
-  const { state, dispatch } = useContext(AppContext);
-
   const editingRef = createRef();
   const highlightingRef = createRef();
   const prismRef = createRef();
-
+  const { state, dispatch } = useContext(AppContext);
   const [rows, setRows] = useState(0);
 
   useEffect(() => {
-    if (prismRef?.current) {
+    if (prismRef.current) {
       Prism.highlightElement(prismRef.current);
     }
   });
+
+  function syncScroll() {
+    if (editingRef?.current && highlightingRef?.current) {
+      highlightingRef.current.scrollLeft = editingRef.current.scrollLeft;
+      highlightingRef.current.scrollTop = editingRef.current.scrollTop;
+    }
+  }
 
   return (
     <div id='wrapper'>
@@ -38,9 +36,9 @@ function Editor() {
         onInput={ (event) => {
           setRows( event.target.value.split('\n').length );
           dispatch({ type: 'UPDATE_INPUT', data: event.target.value });
-          syncScroll(editingRef, highlightingRef);
+          syncScroll();
         } }
-        onScroll={ () => syncScroll(editingRef, highlightingRef) }
+        onScroll={ syncScroll }
       />
       <pre ref={ highlightingRef } id='highlight'>
         <code ref={ prismRef } className='language-javascript'>
