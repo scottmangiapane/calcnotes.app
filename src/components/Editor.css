@@ -1,5 +1,3 @@
-#editor-highlighting { z-index: 0; }
-
 #editor-input {
     background: transparent;
     caret-color: white;
@@ -8,14 +6,14 @@
     z-index: 1;
 }
 
+#editor-input, .grow-wrap::after { grid-area: 1 / 1 / 2 / 2; }
+
 #editor-wrapper {
     min-height: 100%;
     position: relative;
-    width: 100%;
 }
 
 #editor-highlighting, #editor-input {
-    left: 0;
     position: absolute;
     top: 0;
 }
@@ -39,8 +37,6 @@
 
 .grow-wrap::after {
     content: attr(data-replicated-value) ' ';
-    visibility: hidden;
     overflow: auto;
+    visibility: hidden;
 }
-
-#editor-input, .grow-wrap::after { grid-area: 1 / 1 / 2 / 2; }
