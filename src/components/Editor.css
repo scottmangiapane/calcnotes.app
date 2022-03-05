@@ -1,24 +1,6 @@
-#editor-input {
-    background: transparent;
-    caret-color: white;
-    color: transparent;
-    resize: none;
-    z-index: 1;
-}
+#editor-highlighting, #editor-typing { grid-area: 1 / 1 / 2 / 2; }
 
-#editor-input, .grow-wrap::after { grid-area: 1 / 1 / 2 / 2; }
-
-#editor-wrapper {
-    min-height: 100%;
-    position: relative;
-}
-
-#editor-highlighting, #editor-input {
-    position: absolute;
-    top: 0;
-}
-
-#editor-highlighting, #editor-highlighting > code, #editor-input, .grow-wrap::after {
+#editor-highlighting, #editor-highlighting > code, #editor-typing {
     border: 0;
     font-family: 'Roboto Mono';
     font-size: 14px;
@@ -33,10 +15,15 @@
     width: 100%;
 }
 
-.grow-wrap { display: grid; }
+#editor-typing {
+    background: transparent;
+    caret-color: white;
+    color: transparent;
+    resize: none;
+    z-index: 1;
+}
 
-.grow-wrap::after {
-    content: attr(data-replicated-value) ' ';
-    overflow: auto;
-    visibility: hidden;
+#editor-wrapper {
+    display: grid;
+    min-height: 100%;
 }
