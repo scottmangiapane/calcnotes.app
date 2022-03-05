@@ -1,4 +1,6 @@
-#edit {
+#editor-highlighting { z-index: 0; }
+
+#editor-input {
     background: transparent;
     caret-color: white;
     color: transparent;
@@ -6,31 +8,39 @@
     z-index: 1;
 }
 
-#highlight { z-index: 0; }
-
-#wrapper {
+#editor-wrapper {
     min-height: 100%;
     position: relative;
     width: 100%;
 }
 
-#edit, #highlight {
-    border: 0;
-    min-height: 100%;
+#editor-highlighting, #editor-input {
     left: 0;
-    margin: 0;
-    outline: none;
-    overflow: hidden;
-    padding: 0;
     position: absolute;
     top: 0;
-    white-space: nowrap;
-    width: 100%;
 }
 
-#edit, #highlight, #highlight * {
+#editor-highlighting, #editor-highlighting > code, #editor-input, .grow-wrap::after {
+    border: 0;
     font-family: 'Roboto Mono';
     font-size: 14px;
     line-height: 1.6em;
+    margin: 0;
+    min-height: 100%;
+    outline: none;
+    overflow-wrap: break-word;
+    padding: 0;
     tab-size: inherit;
+    white-space: pre-wrap;
+    width: 100%;
 }
+
+.grow-wrap { display: grid; }
+
+.grow-wrap::after {
+    content: attr(data-replicated-value) ' ';
+    visibility: hidden;
+    overflow: auto;
+}
+
+#editor-input, .grow-wrap::after { grid-area: 1 / 1 / 2 / 2; }

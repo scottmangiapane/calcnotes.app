@@ -1,4 +1,4 @@
-import { createRef, useContext, useEffect, useState } from 'react';
+import { createRef, useContext, useEffect } from 'react';
 import Prism from 'prismjs';
 
 import { AppContext } from './App';
@@ -7,10 +7,10 @@ import './Editor.css';
 
 function Editor() {
   const editingRef = createRef();
+  const growWrapRef = createRef();
   const highlightingRef = createRef();
   const prismRef = createRef();
   const { state, dispatch } = useContext(AppContext);
-  const [rows, setRows] = useState(0);
 
   useEffect(() => {
     if (prismRef.current) {
@@ -19,8 +19,8 @@ function Editor() {
   });
 
   function onInput(event) {
-    setRows( event.target.value.split('\n').length );
     dispatch({ type: 'UPDATE_INPUT', data: event.target.value });
+    growWrapRef.current.dataset.replicatedValue = event.target.value;
     syncScroll();
   }
 
@@ -30,17 +30,18 @@ function Editor() {
   }
 
   return (
-    <div id='wrapper'>
-      <textarea
-        ref={ editingRef }
-        id='edit'
-        autoFocus
-        rows={ rows }
-        spellCheck='false'
-        onInput={ onInput }
-        onScroll={ syncScroll }
-      />
-      <pre ref={ highlightingRef } id='highlight'>
+    <div id='editor-wrapper'>
+      <div ref={ growWrapRef } className='grow-wrap'>
+        <textarea
+          ref={ editingRef }
+          id='editor-input'
+          autoFocus
+          onInput={ onInput }
+          onScroll={ syncScroll }
+          spellCheck='false'
+        />
+      </div>
+      <pre ref={ highlightingRef } id='editor-highlighting'>
         <code ref={ prismRef } className='language-javascript'>
           { state.text }
         </code>
