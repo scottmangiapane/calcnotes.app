@@ -25,6 +25,7 @@ function Editor() {
         <code ref={ prismRef } className='language-javascript'>
           { state.text }
         </code>
+        <br />
       </pre>
       <textarea
         id='editor-typing'
