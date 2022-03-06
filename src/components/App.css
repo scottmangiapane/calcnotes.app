@@ -3,6 +3,7 @@ p, pre, textarea {
     font-family: 'Roboto Mono';
     font-size: 14px;
     line-height: 1.6em;
+    tab-size: 4;
     user-select: none;
 }
 

@@ -16,7 +16,8 @@ function Editor() {
   });
 
   function onInput(event) {
-    dispatch({ type: 'UPDATE_INPUT', data: event.target.value });
+    const sanitized = event.target.value.replaceAll('\u00a0', ' ');
+    dispatch({ type: 'UPDATE_INPUT', data: sanitized });
   }
 
   return (
@@ -32,6 +33,7 @@ function Editor() {
         autoFocus
         onInput={ onInput }
         spellCheck='false'
+        value={ state.text }
       />
     </div>
   );

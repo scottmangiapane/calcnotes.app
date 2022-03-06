@@ -1,4 +1,3 @@
-// import { clipboard } from 'electron';
 import { evaluate } from 'mathjs';
 import { useContext } from 'react';
 
@@ -12,12 +11,47 @@ function Solutions() {
   const solutions = [];
   const lines = state.text.split('\n');
 
+  function calculateRows(line) {
+    const actual = document.getElementById('editor-typing');
+    const ruler = document.createElement('p');
+    ruler.innerText = line;
+    ruler.style.fontFamily = 'Roboto Mono';
+    ruler.style.position = 'absolute';
+    ruler.style.width = actual.offsetWidth + 'px';
+    ruler.style.fontSize = '14px';
+    ruler.style.lineHeight = '1.6em';
+
+    // ruler.style.margin = 0;
+    ruler.style.overflowWrap = 'break-word';
+    // ruler.style.padding = 0;
+    ruler.style.tabSize = 'inherit';
+    ruler.style.whiteSpace = 'pre-wrap';
+
+    console.log(ruler);
+    document.body.appendChild(ruler);
+    const rulerHeight = ruler.offsetHeight;
+    document.body.removeChild(ruler);
+    const actualLineHeight = parseInt(window.getComputedStyle(actual).lineHeight, 10);
+    const answer = Math.floor(rulerHeight / actualLineHeight);
+    console.log('returning ' + answer + ' for ' + line);
+    return answer;
+  }
+
   function copyEvent(event) {
     const text = event.target.innerText;
     navigator.clipboard.writeText(text);
   }
 
+  let breakCount = 0;
   for (const [index, line] of lines.entries()) {
+    const rows = calculateRows(line);
+    for (let i = 0; i < rows - 1; i++) {
+      solutions.push(
+        <p key={ 'break-' + (breakCount++) } className='ellipsis solution-wrapper'>
+          <br />
+        </p>
+      );
+    }
     let output;
     try {
       output = evaluate(line, scope);
@@ -28,14 +62,14 @@ function Solutions() {
     const solution = (formatted === undefined)
     ? <br />
     : (
-      <p className='solution' onClick={ copyEvent }>
+      <span className='solution' onClick={ copyEvent }>
         { formatted }
-      </p>
+      </span>
     );
     solutions.push(
-      <div key={ index } className='ellipsis solution-wrapper'>
+      <p key={ index } className='ellipsis solution-wrapper'>
         { solution }
-      </div>
+      </p>
     );
   }
 
