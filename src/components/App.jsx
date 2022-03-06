@@ -3,6 +3,7 @@ import { createContext, useReducer } from 'react';
 import Editor from './Editor';
 import Solutions from './Solutions';
 import SplitPane from './SplitPane';
+import Tabs from './Tabs';
 import Titlebar from './Titlebar';
 
 import './App.css';
@@ -27,11 +28,12 @@ function App() {
   return (
     <div className='app'>
       <Titlebar />
+      <Tabs />
       <div className='dashboard'>
         <AppContext.Provider value={{ state, dispatch }}>
           <SplitPane
-            left={ <Editor className='fill' /> }
-            right={ <Solutions className='fill' /> } />
+            left={ <Editor /> }
+            right={ <Solutions /> } />
         </AppContext.Provider>
       </div>
     </div>

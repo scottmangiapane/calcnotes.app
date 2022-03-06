@@ -18,10 +18,7 @@ body, html, .app, #root {
 
 html { background-color: #263238; }
 
-.bar {
-    height: 38px;
-    padding: 0 calc(24px + 4px);
-}
+.bar { height: 38px; }
 
 .center-content {
     align-items: center;
@@ -31,12 +28,11 @@ html { background-color: #263238; }
 }
 
 .dashboard {
-    height: calc(100% - 38px);
+    height: calc(100% - 38px - 38px - 1px);
     overflow: auto;
 }
 
 .ellipsis {
-    color: white;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
