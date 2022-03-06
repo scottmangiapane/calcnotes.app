@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/notepad-calculator/static/css/main.7b930c6b.css",
+    "main.js": "/notepad-calculator/static/js/main.399468bc.js",
+    "index.html": "/notepad-calculator/index.html",
+    "main.7b930c6b.css.map": "/notepad-calculator/static/css/main.7b930c6b.css.map",
+    "main.399468bc.js.map": "/notepad-calculator/static/js/main.399468bc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b930c6b.css",
+    "static/js/main.399468bc.js"
+  ]
+}
