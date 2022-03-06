@@ -28,13 +28,11 @@ function Solutions() {
     ruler.style.tabSize = 'inherit';
     ruler.style.whiteSpace = 'pre-wrap';
 
-    console.log(ruler);
     document.body.appendChild(ruler);
     const rulerHeight = ruler.offsetHeight;
     document.body.removeChild(ruler);
     const actualLineHeight = parseInt(window.getComputedStyle(actual).lineHeight, 10);
     const answer = Math.floor(rulerHeight / actualLineHeight);
-    console.log('returning ' + answer + ' for ' + line);
     return answer;
   }
 

@@ -28,7 +28,7 @@ html { background-color: #263238; }
 }
 
 .dashboard {
-    height: calc(100% - 38px - 38px - 1px);
+    height: calc(100% - 38px - 1px);
     overflow: auto;
 }
 

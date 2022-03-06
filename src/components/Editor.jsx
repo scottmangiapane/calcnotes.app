@@ -1,11 +1,11 @@
 import Prism from 'prismjs';
-import { createRef, useContext, useEffect } from 'react';
+import { createRef, forwardRef, useContext, useEffect } from 'react';
 
 import { AppContext } from './App';
 
 import './Editor.css';
 
-function Editor() {
+const Editor = forwardRef((props, ref) => {
   const prismRef = createRef();
   const { state, dispatch } = useContext(AppContext);
 
@@ -29,6 +29,7 @@ function Editor() {
         <br />
       </pre>
       <textarea
+        ref={ ref }
         id='editor-typing'
         autoFocus
         onInput={ onInput }
@@ -37,6 +38,6 @@ function Editor() {
       />
     </div>
   );
-}
+});
 
 export default Editor;

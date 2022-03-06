@@ -1,9 +1,8 @@
-import { createContext, useReducer } from 'react';
+import { createContext, createRef, useEffect, useReducer } from 'react';
 
 import Editor from './Editor';
 import Solutions from './Solutions';
 import SplitPane from './SplitPane';
-import Tabs from './Tabs';
 import Titlebar from './Titlebar';
 
 import './App.css';
@@ -11,14 +10,27 @@ import './App.css';
 export const AppContext = createContext();
 
 function App() {
-  const initialState = { editorWidth: 0, text: '' };
+  let text = '';
+  try {
+    text = JSON.parse(localStorage.getItem('text'));
+  } catch (e) { /* ignored */ }
+  const initialState = { editorWidth: 0, text };
+  const editorRef = createRef();
   const [state, dispatch] = useReducer(appReducer, initialState);
+
+  useEffect(() => {
+    const end = editorRef.current.value.length;
+    editorRef.current.setSelectionRange(end, end);
+    editorRef.current.blur();
+    editorRef.current.focus();
+  }, []);
 
   function appReducer(state, action) {
     switch (action.type) {
       case 'UPDATE_EDITOR_WIDTH':
         return { ...state, editorWidth: action.data }
       case 'UPDATE_INPUT':
+        localStorage.setItem('text', JSON.stringify(action.data));
         return { ...state, text: action.data };
       default:
         return initialState;
@@ -28,11 +40,10 @@ function App() {
   return (
     <div className='app'>
       <Titlebar />
-      <Tabs />
       <div className='dashboard'>
         <AppContext.Provider value={{ state, dispatch }}>
           <SplitPane
-            left={ <Editor /> }
+            left={ <Editor ref={ editorRef } /> }
             right={ <Solutions /> } />
         </AppContext.Provider>
       </div>
