@@ -1,26 +1,18 @@
 .solution {
     border-radius: 4px;
+    color: #c3e88d;
     display: inline;
     padding: 0 4px;
     text-align: right;
 }
 
 .solution:hover {
-    background-color: #2196f3;
-    color: white;
+    background-color: #c3e88d;
+    color: black;
     cursor: pointer;
 }
 
-.solution:hover:active {
-    background-color: #1976d2;
-    color: white;
-}
-
-.solution-boolean { color: #c792ea; }
-
-.solution-number { color: #fd9170; }
-
-.solution-string { color: #c3e88d; }
+.solution:hover:active { filter: brightness(90%); }
 
 .solution-wrapper {
     display: block;
