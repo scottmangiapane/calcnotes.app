@@ -13,6 +13,9 @@ function Solutions() {
 
   function calculateRows(line) {
     const actual = document.getElementById('editor-typing');
+    if (!actual) {
+      return 1;
+    }
     const ruler = document.createElement('p');
     ruler.innerText = line;
     ruler.style.fontFamily = 'Roboto Mono';
@@ -21,9 +24,7 @@ function Solutions() {
     ruler.style.fontSize = '14px';
     ruler.style.lineHeight = '1.6em';
 
-    // ruler.style.margin = 0;
     ruler.style.overflowWrap = 'break-word';
-    // ruler.style.padding = 0;
     ruler.style.tabSize = 'inherit';
     ruler.style.whiteSpace = 'pre-wrap';
 

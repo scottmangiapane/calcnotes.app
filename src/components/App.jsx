@@ -10,11 +10,13 @@ import './App.css';
 export const AppContext = createContext();
 
 function App() {
-  const initialState = { text: '' };
+  const initialState = { editorWidth: 0, text: '' };
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   function appReducer(state, action) {
     switch (action.type) {
+      case 'UPDATE_EDITOR_WIDTH':
+        return { ...state, editorWidth: action.data }
       case 'UPDATE_INPUT':
         return { ...state, text: action.data };
       default:

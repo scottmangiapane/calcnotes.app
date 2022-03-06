@@ -1,25 +1,29 @@
-import { createRef, useEffect, useState } from 'react';
+import { createRef, useContext, useEffect, useState } from 'react';
+
+import { AppContext } from './App';
 
 import './SplitPane.css';
 
 function SplitPane({ left, right }) {
-  const leftPaneRef = createRef();
   const dividerRef = createRef();
+  const leftPaneRef = createRef();
   const rightPaneRef = createRef();
-  const [mouseDown, setMouseDown] = useState(false);
+  const { dispatch } = useContext(AppContext);
   const [mouse, setMouse] = useState({});
+  const [mouseDown, setMouseDown] = useState(false);
 
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
+    window.addEventListener('resize', onResize);
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
+      window.removeEventListener('resize', onResize);
     }
   });
 
   function onMouseDown(event) {
-    setMouseDown(true);
     setMouse({
       event,
       offsetLeft: dividerRef.current.offsetLeft,
@@ -27,6 +31,7 @@ function SplitPane({ left, right }) {
       firstWidth: leftPaneRef.current.offsetWidth,
       secondWidth: rightPaneRef.current.offsetWidth
     });
+    setMouseDown(true);
   }
 
   function onMouseMove(event) {
@@ -41,11 +46,17 @@ function SplitPane({ left, right }) {
       const rightPercent = 100 * (mouse.secondWidth - delta.x) / totalPercent;
       leftPaneRef.current.style.width = leftPercent + '%';
       rightPaneRef.current.style.width = rightPercent + '%';
+      onResize();
     }
   }
 
   function onMouseUp() {
     setMouseDown(false);
+  }
+
+  function onResize() {
+    const editorWidth = leftPaneRef.current.offsetWidth;
+    dispatch({ type: 'UPDATE_EDITOR_WIDTH', data: editorWidth });
   }
 
   return (
