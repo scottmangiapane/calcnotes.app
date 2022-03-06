@@ -46,11 +46,11 @@ function SplitPane({ left, right }) {
       const rightPercent = 100 * (mouse.secondWidth - delta.x) / totalPercent;
       leftPaneRef.current.style.width = leftPercent + '%';
       rightPaneRef.current.style.width = rightPercent + '%';
-      onResize();
     }
   }
 
   function onMouseUp() {
+    onResize();
     setMouseDown(false);
   }
 
