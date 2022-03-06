@@ -2,7 +2,7 @@
   "name": "notepad-calculator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://scottmangiapane.github.io/notepad-calculator",
+  "homepage": "https://calcnotes.app",
   "main": "electron.js",
   "dependencies": {
     "electron-store": "^8.0.1",

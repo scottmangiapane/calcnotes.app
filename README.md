@@ -33,6 +33,6 @@ The URL to publish to is defined in the `package.json` as "homepage".
 
 ## Learn More
 
-This project was bootstrapped with Create React App. You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+All calculations are performed by [math.js](https://mathjs.org/). The syntax highlighting is performed by [Prism](https://prismjs.com/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/) and the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
