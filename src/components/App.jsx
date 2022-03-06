@@ -10,10 +10,7 @@ import './App.css';
 export const AppContext = createContext();
 
 function App() {
-  let text = '';
-  try {
-    text = JSON.parse(localStorage.getItem('text'));
-  } catch (e) { /* ignored */ }
+  const text = JSON.parse(localStorage.getItem('text')) || '';
   const initialState = { editorWidth: 0, text };
   const editorRef = createRef();
   const [state, dispatch] = useReducer(appReducer, initialState);
