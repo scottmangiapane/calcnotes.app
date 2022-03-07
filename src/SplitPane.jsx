@@ -71,6 +71,6 @@ function SplitPane({ left, right }) {
       <div ref={ rightPaneRef } className='pane pane-right'>{ right }</div>
     </div>
   );
-};
+}
 
 export default SplitPane;

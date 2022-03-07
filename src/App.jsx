@@ -1,4 +1,4 @@
-import { createContext, createRef, useEffect, useReducer } from 'react';
+import { createContext, useReducer } from 'react';
 
 import Editor from './Editor';
 import Solutions from './Solutions';
@@ -12,15 +12,7 @@ export const AppContext = createContext();
 function App() {
   const text = JSON.parse(localStorage.getItem('text')) || '';
   const initialState = { editorWidth: 0, text };
-  const editorRef = createRef();
   const [state, dispatch] = useReducer(appReducer, initialState);
-
-  useEffect(() => {
-    const end = editorRef.current.value.length;
-    editorRef.current.setSelectionRange(end, end);
-    editorRef.current.blur();
-    editorRef.current.focus();
-  }, []);
 
   function appReducer(state, action) {
     switch (action.type) {
@@ -40,12 +32,12 @@ function App() {
       <div className='dashboard'>
         <AppContext.Provider value={{ state, dispatch }}>
           <SplitPane
-            left={ <Editor ref={ editorRef } /> }
+            left={ <Editor /> }
             right={ <Solutions /> } />
         </AppContext.Provider>
       </div>
     </div>
   );
-};
+}
 
 export default App;
