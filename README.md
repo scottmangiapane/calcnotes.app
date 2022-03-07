@@ -1,6 +1,6 @@
 # CalcNotes
 
-Most desktop calculator apps are designed to mimic physical calculators, with large clickable buttons and little to no keyboard input. And although this design works well on a physical device that you hold in your hand, it's clunky and inefficient for a desktop app. This app has an interface made for desktop computing and also provides advanced features like variables and functions.
+Most desktop calculator apps are designed to mimic physical calculators, with large clickable buttons and little to no keyboard input. And although this design works well on a physical device that you hold in your hand, it's clunky and inefficient for a desktop app. CalcNotes has an interface made for desktop computing and also provides advanced features like variables and functions.
 
 ![demo](/screenshots/demo.png)
 

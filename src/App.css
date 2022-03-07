@@ -1,10 +1,14 @@
-p, pre, textarea {
+code, p, pre {
+    cursor: default;
+    user-select: none;
+}
+
+code, p, pre, textarea {
     color: white;
     font-family: 'Roboto Mono';
     font-size: 14px;
     line-height: 1.6em;
     tab-size: 4;
-    user-select: none;
 }
 
 body, div, html, p, pre, textarea {
@@ -12,9 +16,7 @@ body, div, html, p, pre, textarea {
     padding: 0;
 }
 
-body, html, .app, #root {
-    height: 100%;
-}
+body, html, .app, #root { height: 100%; }
 
 html { background-color: #263238; }
 
