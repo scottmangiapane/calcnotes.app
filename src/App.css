@@ -1,15 +1,13 @@
-code, p, pre {
-    cursor: default;
-    user-select: none;
+/* Palette */
+
+:root {
+    --link: #2e8dd0;
+    --theme: #263238;
 }
 
-code, p, pre, textarea {
-    color: white;
-    font-family: 'Roboto Mono';
-    font-size: 14px;
-    line-height: 1.6em;
-    tab-size: 4;
-}
+/* Resets */
+
+a, a:active, a:focus, a:hover, a:visited { text-decoration: none; }
 
 body, div, html, p, pre, textarea {
     margin: 0;
@@ -18,16 +16,31 @@ body, div, html, p, pre, textarea {
 
 body, html, .app, #root { height: 100%; }
 
-html { background-color: #263238; }
+/* Text */
 
-.bar { height: 38px; }
+a { color: var(--link); }
 
-.center-content {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+a:hover {
+    color: var(--link);
+    text-decoration: underline;
 }
+
+a, code, p, pre, textarea {
+    color: white;
+    font-family: 'Roboto Mono';
+    font-size: 14px;
+    line-height: 1.6em;
+    tab-size: 4;
+}
+
+code, p, pre {
+    cursor: default;
+    user-select: none;
+}
+
+/* Styles */
+
+html { background-color: var(--theme); }
 
 .dashboard {
     height: calc(100% - 38px - 1px);
