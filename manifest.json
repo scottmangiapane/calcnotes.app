@@ -1,0 +1,25 @@
+{
+  "name": "CalcNotes",
+  "short_name": "CalcNotes",
+  "description": "An advanced calculator app with an interface made for desktop computing. Store data in variables, create custom functions, and more.",
+  "start_url": "/",
+  "scope": "/",
+  "background_color": "#263238",
+  "theme_color": "#263238",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "https://calcnotes.app/favicon.svg",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "https://calcnotes.app/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": []
+}
