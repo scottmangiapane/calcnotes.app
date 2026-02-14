@@ -46,33 +46,34 @@ function Solutions() {
     const rows = calculateRows(line);
     for (let i = 0; i < rows - 1; i++) {
       solutions.push(
-        <p key={ 'break-' + (breakCount++) } className='ellipsis solution-wrapper'>
+        <p key={'break-' + (breakCount++)} className='ellipsis solution-wrapper'>
           <br />
         </p>
       );
     }
     let output;
     try {
-      output = evaluate(line, scope);
+      const noCommas = line.replace(/(\d),(?=\d{3}\b)/g, '$1');
+      output = evaluate(noCommas, scope);
     } catch (e) { /* ignored */ }
     const formatted = (typeof output === 'number')
       ? Math.round(output * 100) / 100
       : JSON.stringify(output);
     const solution = (formatted === undefined)
-    ? <br />
-    : (
-      <span className='solution' onClick={ copyEvent }>
-        { formatted }
-      </span>
-    );
+      ? <br />
+      : (
+        <span className='solution' onClick={copyEvent}>
+          {formatted}
+        </span>
+      );
     solutions.push(
-      <p key={ index } className='ellipsis solution-wrapper'>
-        { solution }
+      <p key={index} className='ellipsis solution-wrapper'>
+        {solution}
       </p>
     );
   }
 
-  return <>{ solutions }</>;
+  return <>{solutions}</>;
 }
 
 export default Solutions;
