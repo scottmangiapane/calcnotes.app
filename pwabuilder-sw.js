@@ -1,6 +1,6 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "calcnotes-page";
+const CACHE = "calcnotes-page-v1";
 
 const offlineFallbackPage = "index.html";
 
